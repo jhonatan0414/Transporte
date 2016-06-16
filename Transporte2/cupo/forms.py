@@ -2,8 +2,10 @@
 from django.forms import ModelForm
 from django import forms
 from .models import cupo
+from ruta.models import ruta
+from cliente.models import cliente
 
-class clienteForm(forms.ModelForm):
+class cupoForm(forms.ModelForm):
     Codigo = forms.CharField(widget=forms.TextInput(attrs={'class': 'error','placeholder': 'Ingrese un codigo'}))
     CodigoRuta = forms.ModelChoiceField( queryset = ruta.objects.all() )
     Cedula = forms.ModelChoiceField( queryset = cliente.objects.all() )

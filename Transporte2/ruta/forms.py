@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django import forms
 from .models import ruta
 
-class clienteForm(forms.ModelForm):
+class rutaForm(forms.ModelForm):
     CodigoRuta = forms.CharField(widget=forms.TextInput(attrs={'class': 'error','placeholder': 'Ingrese una ruta'}))
     IdConductor = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'error','placeholder': 'Ingrese id. del conductor '}))
     Codigo_Vehiculo = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'error','placeholder': 'Ingrese id. del vehiculo'}))

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> /Lista de Rutas</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">Codigo</th>
+          <th width="235">Cedula del Conductor</th>
+          <th width="235">Matricula del Vehiculo</th>
+          <th width="235">Asientos del Vehiculo</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for ruta in ruta %}
+        <tr>
+          <td><a href={{ request.get_host }}/ruta/{{ruta.id}}>{{ruta.CodigoRuta}}</a></td>
+          <td>{{ruta.IdConductor}}</td>
+          <td>{{ruta.Codigo_Vehiculo}}</td>
+          <td>{{ruta.Lugares}}</td>
+          <td><a href={{ request.get_host }}/ruta_e/{{ruta.id}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

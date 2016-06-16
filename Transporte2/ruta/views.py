@@ -6,8 +6,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.shortcuts import render
 from .models import ruta
-from productos.models import cliente
-from productos.models import cupo
+from cliente.models import cliente
+from cupo.models import cupo
 from .forms import rutaForm
 
 def inicio(request):

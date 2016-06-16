@@ -25,6 +25,8 @@ SECRET_KEY = 'igzr$n=*pzb7k3-*7+p1t%ur4=t0(lj92n0o^0^01d37=ymaia'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TEMPLATE_DEBUG = True
+
 ALLOWED_HOSTS = []
 
 
@@ -56,21 +58,27 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'Transporte2.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+TEMPLATE_DIRS = (
+    #Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    os.path.join('templates'),
+    #"/home/stroop/djangostack-1.9.6-0/apache2/htdocs/Transporte2/templates",
+)
+
+#TEMPLATES = [
+#    {
+#        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#        'DIRS': [os.path.join('templates')],
+#        'APP_DIRS': True,
+#        'OPTIONS': {
+#            'context_processors': [
+#                'django.template.context_processors.debug',
+#                'django.template.context_processors.request',
+#                'django.contrib.auth.context_processors.auth',
+#                'django.contrib.messages.context_processors.messages',
+#            ],
+#        },
+#    },
+#]
 
 WSGI_APPLICATION = 'Transporte2.wsgi.application'
 
@@ -83,9 +91,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'transporte',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '12345',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': '3366',
     }
 }
 
@@ -126,17 +134,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
-
-TEMPLATE_DEBUG = True
-
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    os.path.join('templates'),
-)
-
 STATICFILES_DIRS = (
     os.path.join('Transporte2/static'),
+    #'/home/stroop/djangostack-1.9.6-0/apache2/htdocs/Transporte2/static/',
 )
 
 STATIC_URL = '/static/'

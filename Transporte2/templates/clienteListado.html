@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> /Lista de clientes</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">Cedula</th>
+          <th width="235">Nombre</th>
+          <th width="235">Apellido</th>
+          <th width="235">Edad</th>
+          <th width="235">Correo</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for cliente in cliente %}
+        <tr>
+          <td><a href={{ request.get_host }}/cliente/{{cliente.id}}>{{cliente.Cedula}}</a></td>
+          <td>{{cliente.Nombre}}</td>
+          <td>{{cliente.Apellido}}</td>
+          <td>{{cliente.Edad}}</td>
+          <td>{{cliente.Correo}}</td>
+          <td><a href={{ request.get_host }}/cliente_e/{{cliente.id}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

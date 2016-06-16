@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> / Lista de cupos</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">Codigo</th>
+          <th width="235">Codigo de Ruta</th>
+          <th width="235">Cedula del Cliente</th>
+          <th width="235">Reserva</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for cupo in cupo %}
+        <tr>
+          <td><a href={{ request.get_host }}/cupo/{{cupo.id}}>{{cupo.Codigo}}</a></td>
+          <td>{{cupo.CodigoRuta}}</td>
+          <td>{{cupo.Cedula}}</td>
+          <td>{{cupo.Reserva}}</td>
+          <td><a href={{ request.get_host }}/cupo_e/{{cupo.Codigo}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}
